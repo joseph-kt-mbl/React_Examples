@@ -1,0 +1,24 @@
+*{
+    margin: 0.5rem;
+    padding: 0.25rem;
+    box-sizing: border-box;
+}
+
+li{
+    cursor: pointer;
+
+}
+input {
+    background-color: aliceblue;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    padding: 12px;
+    color: hsl(0, 2%, 9%);
+}
+input:focus{
+    border: 1px solid hsl(0, 2%, 15%);
+}
+ul{
+    padding-left: 1.75rem;
+}

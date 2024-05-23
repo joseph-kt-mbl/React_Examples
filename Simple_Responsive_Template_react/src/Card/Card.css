@@ -1,0 +1,49 @@
+.card {
+    width: 100%; /* Ensures the card fills its container */
+    max-width: 350px; /* Maximum width of the card */
+    background-color: black;
+    color: aliceblue;
+
+    /* background-color: aliceblue;
+    color: black; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin: 0.75rem;
+}
+
+.profile-pic {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1.75rem; /* Add space between profile pic and title */
+}
+
+.profile-pic img {
+    min-width: 60px;
+    padding: .25rem;
+    background-color: #646cff;
+    height: auto;
+    width: 100px;
+    border-radius: 50%; /* Make the image circular */
+    margin:0 .75rem 1rem 0; /* Add space between image and title */
+}
+
+.profile-pic .title{
+    max-width: 150px;
+    width: 120px;
+    padding: .25rem;
+}
+
+.title p {
+    margin: 0; /* Remove default margin */
+    /* text-align: center; */
+}
+
+.description p {
+    margin: 0; /* Remove default margin */
+    color: #ccc; /* Adjust description text color */
+}

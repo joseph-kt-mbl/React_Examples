@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function colorStringToRgb(colorStr) {
+            const rgb = { r: 0, g: 0, b: 0 };
+        
+            // Trim the string to remove any whitespace
+            colorStr = colorStr.trim();
+        
+            // Check if it's a hex color (e.g., #ffffff or #fff)
+            if (colorStr.startsWith('#')) {
+                // Remove the hash
+                const hex = colorStr.slice(1);
+                
+                if (hex.length === 3) {
+                    // Convert shorthand hex to full
+                    rgb.r = parseInt(hex[0] + hex[0], 16);
+                    rgb.g = parseInt(hex[1] + hex[1], 16);
+                    rgb.b = parseInt(hex[2] + hex[2], 16);
+                } else if (hex.length === 6) {
+                    // Convert full hex to decimal
+                    rgb.r = parseInt(hex.substring(0, 2), 16);
+                    rgb.g = parseInt(hex.substring(2, 4), 16);
+                    rgb.b = parseInt(hex.substring(4, 6), 16);
+                }
+            }
+            // Check if it's an RGB color (e.g., rgb(255, 255, 255))
+            else if (colorStr.startsWith('rgb')) {
+                // Extract numbers
+                const matches = colorStr.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+                if (matches) {
+                    rgb.r = parseInt(matches[1]);
+                    rgb.g = parseInt(matches[2]);
+                    rgb.b = parseInt(matches[3]);
+                }
+            }
+            // Handle named colors by creating a temporary element and using the browser to determine the color
+            else {
+                const fakeDiv = document.createElement("div");
+                fakeDiv.style.color = colorStr;
+                document.body.appendChild(fakeDiv);
+        
+                // Get the computed color style
+                const computedColor = window.getComputedStyle(fakeDiv).color;
+                document.body.removeChild(fakeDiv);
+        
+                // Extract the RGB values from computed style
+                const rgbMatches = computedColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+                if (rgbMatches) {
+                    rgb.r = parseInt(rgbMatches[1]);
+                    rgb.g = parseInt(rgbMatches[2]);
+                    rgb.b = parseInt(rgbMatches[3]);
+                }
+            }
+        
+            return rgb;
+        }
+        
+        // Examples of usage:
+        console.log(colorStringToRgb("#ff8844")); // { r: 255, g: 136, b: 68 }
+        console.log(colorStringToRgb("rgb(255, 0, 0)")); // { r: 255, g: 0, b: 0 }
+        console.log(colorStringToRgb("blue")); // Outputs rgb values for blue, typically { r: 0, g: 0, b: 255 }
+        
+    </script>
+</body>
+</html>

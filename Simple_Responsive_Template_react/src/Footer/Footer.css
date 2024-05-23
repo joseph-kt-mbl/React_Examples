@@ -1,0 +1,16 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    height: 200px;
+    width: 100%;
+    padding: 1.75rem;
+    background-color: aliceblue;
+    color: #0f0e0d;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+footer h1{
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+}

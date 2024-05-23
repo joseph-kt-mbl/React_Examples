@@ -1,0 +1,17 @@
+[
+    {
+        "id":"1",
+      "title": "Explore the Cosmos",
+      "description": "Dive into the mysteries of outer space! Discover the latest findings in astronomy and what they tell us about our universe. Join us for a journey beyond the Earth!"
+    },
+    {
+        "id":"2",
+      "title": "Master the Art of Cooking",
+      "description": "Unlock your culinary potential with our collection of gourmet recipes and expert tips. Whether you're a beginner or a seasoned chef, find everything you need to cook delicious meals every day."
+    },
+    {
+        "id":"3",
+      "title": "Digital Marketing 101",
+      "description": "Learn the fundamentals of digital marketing, from social media strategies to email campaigns. This guide provides essential insights for boosting your online presence and reaching more customers."
+    }
+]
